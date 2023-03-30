@@ -1,5 +1,11 @@
 name: CI
-on: [push, pull_request]
+on: 
+  workflow_dispatch:
+   inputs:
+      tag:
+        description: "Chart tag to create"
+        type: string
+        default: ''
 jobs:
   build:
     runs-on: ubuntu-latest
